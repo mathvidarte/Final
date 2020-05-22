@@ -1,0 +1,3 @@
+personas sanas:100
+personas infectadas:40
+personas recuperadas:20
