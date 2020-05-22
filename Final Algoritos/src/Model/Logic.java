@@ -1,7 +1,9 @@
 package Model;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
+import Exception.ContagioException;
 import processing.core.PApplet;
 
 public class Logic {
@@ -54,10 +56,29 @@ public class Logic {
 			
 		}
 		System.out.println(textSplit[1]);
-		
-		
-		
+			
 }
+	
+	public void sortList (char c) {
+		switch (c) {
+		case 'n':
+			Collections.sort(personaList);
+			
+			for (int i = 0; i < personaList.size(); i++) {
+				
+				personaList.get(i).setPosX(i*80+50);
+				personaList.get(i).setPosY(300);
+			}
+		
+		}
+	}
+	
+	public void contagio (boolean contagio) throws ContagioException {
+		if (contagio == true) {
+			throw new ContagioException ("Contagiado");
+		}
+	}
+	
 	public LinkedList <Persona> getPersonaList () {
 		return personaList;
 	}
